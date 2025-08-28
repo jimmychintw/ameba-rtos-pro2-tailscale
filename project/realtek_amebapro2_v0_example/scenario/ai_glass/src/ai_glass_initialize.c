@@ -1803,13 +1803,6 @@ void ai_glass_service_thread(void *param)
 	uart_service_start(1);
 	AI_GLASS_MSG("uart service send data time %lu\r\n", mm_read_mediatime_ms());
 
-	// Init chip id info for VOE
-	AON_TypeDef *aon = AON;
-	u32 chip_id = 0;
-	chip_id = 0xbfffffef;
-	// Assign chip id for 12M enable
-	aon->AON_REG_AON_FAST_RESUME = chip_id;
-
 exit:
 	vTaskDelete(NULL);
 }

@@ -1938,6 +1938,8 @@ int wifi_enable_sta_mode(rtw_network_info_t *connect_param, int timeout, int ret
 		wifi_set_channel(connect_param->channel);
 	}
 
+	wifi_fast_connect_enable(1);
+
 	if (wifi_on(RTW_MODE_STA) < 0) {
 		AI_GLASS_ERR("\n\r[SET STATION MODE] ERROR: wifi_on failed\n");
 		return WLAN_SET_FAIL;
@@ -2025,6 +2027,7 @@ static void deinit_dhcp(void)
 int wifi_enable_ap_mode(const char *ssid, const char *password, int channel, int timeout)
 {
 	WLAN_SCEN_WARN("AI glass wifi_enable_ap_mode\r\n");
+	wifi_fast_connect_enable(0);
 #if CONFIG_INIT_NET
 #if CONFIG_LWIP_LAYER
 	// Initilaize the LwIP stack, if the LwIP is not initalized yet
