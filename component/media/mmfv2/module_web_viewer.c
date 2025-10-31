@@ -28,12 +28,6 @@ int webview_control(void *p, int cmd, int arg)
 	case CMD_WEB_VIEWER_APPLY:
 		start_websocket_viewer();
 		break;
-	case CMD_WEB_VIEWER_SET_BUF:
-		ws_viewer_set_buf(arg);
-		break;
-	case CMD_WEB_VIEWER_SET_LEN:
-		ws_viewer_set_len(arg);
-		break;
 	}
 	return 0;
 }
@@ -49,6 +43,8 @@ void *webview_destroy(void *p)
 
 void *webview_create(void *parent)
 {
+	int timeout = 10;
+
 	wview_ctx_t *ctx = malloc(sizeof(wview_ctx_t));
 	if (!ctx) {
 		return NULL;
