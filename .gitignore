@@ -5,3 +5,9 @@
 *.su
 libsrc
 *@tmp
+
+# Build artifacts
+project/realtek_amebapro2_v0_example/GCC-RELEASE/build/
+
+# macOS
+.DS_Store

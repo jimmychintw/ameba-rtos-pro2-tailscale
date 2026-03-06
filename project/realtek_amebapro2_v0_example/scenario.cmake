@@ -92,6 +92,9 @@ list(
 list(
 	APPEND scn_sources
 	${prj_root}/src/main.c
+	#${prj_root}/src/wg_test/wg_test.c
+	${prj_root}/src/tailscale_main/ts_main.c
+	${prj_root}/src/ota_server/ota_server.c
 )
 
 if(DEFINED EXAMPLE AND EXAMPLE)
@@ -162,6 +165,7 @@ list(
 	${prj_root}/src/test_model/svm
 	${prj_root}/src/test_model
 	${prj_root}/src
+	${prj_root}/src/ota_server
 	${prj_root}/src/${viplite}/sdk/inc
 	${prj_root}/src/${viplite}/driver/inc
 	${prj_root}/src/${viplite}/hal/inc

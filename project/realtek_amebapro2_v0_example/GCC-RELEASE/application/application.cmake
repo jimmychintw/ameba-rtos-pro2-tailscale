@@ -52,6 +52,8 @@ include(./libfaultlog.cmake OPTIONAL)
 include(./libeap.cmake OPTIONAL)
 include(./libiperf3.cmake OPTIONAL)
 include(./libwebsocket_viewer.cmake OPTIONAL)
+include(./libwireguard.cmake OPTIONAL)
+include(./libtailscale.cmake OPTIONAL)
 
 if(BUILD_LIB)
 	message(STATUS "build libraries")
@@ -911,6 +913,8 @@ list(
 	eap	
 	faultlog
 	websocket_viewer
+	tailscale
+	wireguard
 	${soclib}
 )
 
